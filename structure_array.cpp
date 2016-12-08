@@ -102,7 +102,7 @@ void insert(int position, int copies, double price, struct Book book[])
 	}
 }
 
-void del(int positon, struct Book book[])
+void del(int position, struct Book book[])
 {
 	int i;
 	for (i=position; i<5; i++)
