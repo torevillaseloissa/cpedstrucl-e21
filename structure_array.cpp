@@ -5,7 +5,7 @@ using namespace std;
 void display (struct Book[]);
 void insert (int, int, double, struct Book[]);
 void del (int, struct Book[]);
-void swap (int, int, int []);
+void swap (int, int, struct Book[]);
 struct Book {
   	int copies;
   	double price;
@@ -55,7 +55,7 @@ int main()
 				{
 					cout << "Enter position 1 and position 2: ";
 					cin >> position >> p2;
-					swap(position,p2,arr);
+					swap(position,p2,book);
 					display(book);
 				} break;
 			case 5:
@@ -113,10 +113,10 @@ void del(int position, struct Book book[])
 	book[position].price=0;
 }
 
-void swap (int p, int p2, int a[])
+void swap (int p, int p2, struct Book book[])
 {
-	int temp;
-	temp=a[p];
-	a[p]=a[p2];
-	a[p2]=temp;
+	Book temp[5];
+	temp[p]=book[p];
+	book[p]=book[p2];
+	book[p2]=temp[p];
 }
