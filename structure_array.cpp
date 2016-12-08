@@ -95,8 +95,10 @@ void insert(int position, int copies, double price, struct Book book[])
 	book[position].price=price;
 	for (i=position; i<=5; i++)
 	{
-		book[i+1].copies=temp[i-position].copies;
-		book[i+1].price=temp[i-position].price;
+		if(book[i].copies != 0){
+			book[i+1].copies=temp[i-position].copies;
+			book[i+1].price=temp[i-position].price;
+		}
 	}
 }
 
