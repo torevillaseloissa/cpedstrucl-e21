@@ -7,13 +7,13 @@ void insert (int, int, int []);
 void del (int, int[]);
 void swap (int, int, int []);
 
+struct Book {
+  	int copies;
+  	double price;
+};
+
 int main()
 {
-	struct Book {
-	  int copies;
-	  double price;
-	};
-	
 	Book book[5];
 	
 	int arr[20]={1,2,3,4,5,6,7,8,9,10};
