@@ -2,20 +2,17 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-void display (int[]);
+void display (struct Book[]);
 void insert (int, int, int []);
 void del (int, int[]);
 void swap (int, int, int []);
-
 struct Book {
   	int copies;
   	double price;
-};
-
+}book[5];
+	
 int main()
 {
-	Book book[5];
-	
 	int arr[20]={1,2,3,4,5,6,7,8,9,10};
 	while(1)
 	{
@@ -33,28 +30,28 @@ int main()
 		{
 			case 1:
 				{
-					display(arr);
+					display(book);
 				} break;
 			case 2:
 				{
 					cout << "Enter value and position: ";
 					cin >> v >> p;
 					insert(v,p,arr);
-					display(arr);
+					display(book);
 				} break;
 			case 3:
 				{
 					cout << "Enter position: ";
 					cin >> p;
 					del(p,arr);
-					display(arr);
+					display(book);
 				} break;
 			case 4:
 				{
 					cout << "Enter position 1 and position 2: ";
 					cin >> p >> p2;
 					swap(p,p2,arr);
-					display(arr);
+					display(book);
 				} break;
 			case 5:
 				{
@@ -70,11 +67,11 @@ int main()
 	return 0;
 }
 
-void display(int a[])
+void display(struct Book book[])
 {
-	for(int i=0; i<20; i++)
+	for(int i=0; i<5; i++)
 	{
-		cout << "[" << i << "]" << a[i] << endl;
+		cout << "[" << i << "]" << book[i].copies << endl;
 	}
 }
 
