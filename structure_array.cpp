@@ -3,7 +3,7 @@
 #include <conio.h>
 using namespace std;
 void display (struct Book[]);
-void insert (int, int, struct Book[]);
+void insert (int, int, double, struct Book[]);
 void del (int, int[]);
 void swap (int, int, int []);
 struct Book {
@@ -17,7 +17,7 @@ int main()
 	while(1)
 	{
 		system ("cls");
-		int choice, copies, p, p2;
+		int choice, copies, position, p2;
 		double price;
 		cout << "Array Manipulation\n";
 		cout << "[1] Display \n";
@@ -39,7 +39,9 @@ int main()
 					cin >> copies;
 					cout << "Enter price: ";
 					cin >> price;
-					insert(copies,price,book);
+					cout << "Enter position: ";
+					cin >> position;
+					insert(position,copies,price,book);
 					display(book);
 				} break;
 			case 3:
@@ -78,7 +80,7 @@ void display(struct Book book[])
 	}
 }
 
-void insert(int v, int p, struct Book book[])
+void insert(int position, int copies, double price, struct Book book[])
 {
 	int i;
 	int x[20]={};
