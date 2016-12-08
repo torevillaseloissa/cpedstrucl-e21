@@ -17,7 +17,8 @@ int main()
 	while(1)
 	{
 		system ("cls");
-		int choice, v, p, p2;
+		int choice, copies, p, p2;
+		double price;
 		cout << "Array Manipulation\n";
 		cout << "[1] Display \n";
 		cout << "[2] Insert \n";
@@ -34,9 +35,11 @@ int main()
 				} break;
 			case 2:
 				{
-					cout << "Enter value and position: ";
-					cin >> v >> p;
-					insert(v,p,arr);
+					cout << "Enter number of copies: ";
+					cin >> copies;
+					cout << "Enter price: ";
+					cin >> price;
+					insert(copies,price,book);
 					display(book);
 				} break;
 			case 3:
