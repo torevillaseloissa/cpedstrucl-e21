@@ -3,7 +3,7 @@
 #include <conio.h>
 using namespace std;
 void display (struct Book[]);
-void insert (int, int, int []);
+void insert (int, int, struct Book[]);
 void del (int, int[]);
 void swap (int, int, int []);
 struct Book {
@@ -75,7 +75,7 @@ void display(struct Book book[])
 	}
 }
 
-void insert(int v, int p, int a[])
+void insert(int v, int p, struct Book book[])
 {
 	int i;
 	int x[20]={};
