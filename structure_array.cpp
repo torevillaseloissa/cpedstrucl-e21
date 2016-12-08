@@ -47,15 +47,15 @@ int main()
 			case 3:
 				{
 					cout << "Enter position: ";
-					cin >> p;
-					del(p,arr);
+					cin >> position;
+					del(position,arr);
 					display(book);
 				} break;
 			case 4:
 				{
 					cout << "Enter position 1 and position 2: ";
-					cin >> p >> p2;
-					swap(p,p2,arr);
+					cin >> position >> p2;
+					swap(position,p2,arr);
 					display(book);
 				} break;
 			case 5:
@@ -84,16 +84,18 @@ void insert(int position, int copies, double price, struct Book book[])
 {
 	int i;
 	int x[20]={};
-	for(i=p; i<20; i++)
-	{
-		x[i-p]=a[i];
-	}
-	
-	a[p]=v;
-	for (i=p; i<=20; i++)
-	{
-		a[i+1]=x[i-p];
-	}
+	Book b[20];
+	book[position].copies = copies;
+//	for(i=position; i<20; i++)
+//	{
+//		x[i-position]=a[i];
+//	}
+//	
+//	a[position]=v;
+//	for (i=position; i<=20; i++)
+//	{
+//		a[i+1]=x[i-position];
+//	}
 }
 
 void del(int p, int a[])
