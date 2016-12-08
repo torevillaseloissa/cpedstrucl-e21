@@ -83,19 +83,21 @@ void display(struct Book book[])
 void insert(int position, int copies, double price, struct Book book[])
 {
 	int i;
-	int x[20]={};
-	Book b[20];
+	Book temp[5];
 	book[position].copies = copies;
-//	for(i=position; i<20; i++)
-//	{
-//		x[i-position]=a[i];
-//	}
-//	
-//	a[position]=v;
-//	for (i=position; i<=20; i++)
-//	{
-//		a[i+1]=x[i-position];
-//	}
+	for(i=position; i<5; i++)
+	{
+		temp[i-position].copies=book[i].copies;
+		temp[i-position].price=book[i].price;
+	}
+	
+	book[position].copies=copies;
+	book[position].price=price;
+	for (i=position; i<=5; i++)
+	{
+		book[i+1].copies=temp[i-position].copies;
+		book[i+1].price=temp[i-position].price;
+	}
 }
 
 void del(int p, int a[])
