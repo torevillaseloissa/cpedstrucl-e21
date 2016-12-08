@@ -4,7 +4,7 @@
 using namespace std;
 void display (struct Book[]);
 void insert (int, int, double, struct Book[]);
-void del (int, int[]);
+void del (int, struct Book[]);
 void swap (int, int, int []);
 struct Book {
   	int copies;
@@ -48,7 +48,7 @@ int main()
 				{
 					cout << "Enter position: ";
 					cin >> position;
-					del(position,arr);
+					del(position,book);
 					display(book);
 				} break;
 			case 4:
@@ -102,14 +102,15 @@ void insert(int position, int copies, double price, struct Book book[])
 	}
 }
 
-void del(int p, int a[])
+void del(int positon, struct Book book[])
 {
 	int i;
-	for (i=p; i<20; i++)
+	for (i=position; i<5; i++)
 	{
-		a[i]=a[i+1];
+		book[i]=book[i+1];
 	}
-	a[20-1]=0;
+	book[position].copies=0;
+	book[position].price=0;
 }
 
 void swap (int p, int p2, int a[])
