@@ -33,6 +33,17 @@ public:
                                
         head = n;             
     }
+    
+     void popValue(){
+        Node *n = head;
+        int ret = n->x;
+
+        head = head->next;
+        cout << "\tYou Popped the Value: " << ret;
+        delete n;
+ 
+    }
+    
 
 private:
     Node *head; 
@@ -44,8 +55,9 @@ int main() {
 		system("cls");
     	cout << "\t\t\tMenu" << endl;
     	cout << "\t[1] Add" << endl;
-    	cout << "\t[2] Display" << endl;
-    	cout << "\t[3] Exit" << endl;
+    	cout << "\t[2] Pop" << endl;
+    	cout << "\t[3] Display" << endl;
+    	cout << "\t[4] Exit" << endl;
     	cout << "\tEnter your choice: ";
     	cin >> choice;
     	
@@ -55,8 +67,20 @@ int main() {
 				 list.addValue(x);
 				 z++;
 				 break;
-
+			
 			case 2:
+				if(z==0)
+				{
+					cout << "\tEMPTY!";
+				}
+				else
+				{
+				list.popValue();
+				z--;
+				}
+				break;
+
+			case 3:
 				if (z == 0){
 	    		cout << "STACK IS EMPTY!";
 				}
@@ -65,9 +89,11 @@ int main() {
 					list.display();
 				}
 				break;
-			case 3:
+				
+			case 4:
 				exit(1);
 				break;
+				
 			default:
 				cout << "\tInvalid!" << endl;
 				break;
